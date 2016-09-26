@@ -1,0 +1,85 @@
+Installation
+============
+
+Installing git prflow manually
+
+If you prefer a manual installation, please use the following instructions:
+
+     git clone --recursive git@github.com:boris-rea/gitflow.git
+Then, you can install git prflow, using:
+
+     sudo make install
+By default, git prflow will be installed in /usr/local. To change the prefix where git prflow will be installed, simply specify it explicitly, using:
+
+     sudo make prefix=/opt/local install
+You can install it to your home directory (make sure $HOME/bin is in your $PATH):
+
+     make install prefix=$HOME
+Or simply point your PATH environment variable to your git prflow checkout directory.
+
+Installation note:
+    git prflow depends on the availability of the command line utility getopt, which may not be available in your Unix/Linux environment. Please use your favorite package manager to install getopt. For Cygwin, install the util-linux package to get getopt. If you use apt-get as your install manager, the package name is opt.
+
+git prflow
+===========
+
+License terms
+-------------
+git-flow is published under the liberal terms of the BSD License, see the
+[LICENSE](LICENSE) file. Although the BSD License does not require you to share
+any modifications you make to the source code, you are very much encouraged and
+invited to contribute back your modifications to the community, preferably
+in a Github fork, of course.
+
+
+### Initialization
+
+To initialize a new repo with the basic branch structure, use:
+  
+		git prflow init [-d]
+  
+This will then interactively prompt you with some questions on which branches
+you would like to use as development and production branches, and how you
+would like your prefixes be named. You may simply press Return on any of
+those questions to accept the (sane) default suggestions.
+
+The ``-d`` flag will accept all defaults.
+
+
+### Creating feature/release/hotfix/support branches
+
+* To list/start/finish feature branches, use:
+  
+  		git prflow feature
+  		git prflow feature start <name> [<base>]
+  		git prflow feature finish <name>
+  
+  For feature branches, the `<base>` arg must be a commit on `develop`.
+
+* To push/pull a feature branch to the remote repository, use:
+
+  		git prflow feature publish <name>
+        git prflow feature pull <remote> <name>
+
+* To list/start/finish release branches, use:
+  
+  		git prflow release
+  		git prflow release start <release> [<base>]
+  		git prflow release finish <release>
+  
+  For release branches, the `<base>` arg must be a commit on `develop`.
+  
+* To list/start/finish hotfix branches, use:
+  
+  		git prflow hotfix
+  		git prflow hotfix start <release> [<base>]
+  		git prflow hotfix finish <release>
+  
+  For hotfix branches, the `<base>` arg must be a commit on `master`.
+
+* To list/start support branches, use:
+  
+  		git prflow support
+  		git prflow support start <release> <base>
+  
+  For support branches, the `<base>` arg must be a commit on `master`.
