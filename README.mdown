@@ -5,7 +5,7 @@ Installing git prflow manually
 
 If you prefer a manual installation, please use the following instructions:
 
-     git clone --recursive git@github.com:boris-rea/gitflow.git
+     git clone --recursive git@github.com:boris-rea/git-prflow.git
 Then, you can install git prflow, using:
 
      sudo make install
