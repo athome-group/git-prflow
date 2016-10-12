@@ -5,7 +5,9 @@ Installing git prflow manually
 
 If you prefer a manual installation, please use the following instructions:
 
-     git clone --recursive git@github.com:boris-rea/git-prflow.git
+     git clone --recursive git@github.com:athome-group/git-prflow.git
+	 cd git-prflow
+
 Then, you can install git prflow, using:
 
      sudo make install
@@ -19,6 +21,17 @@ Or simply point your PATH environment variable to your git prflow checkout direc
 
 Installation note:
     git prflow depends on the availability of the command line utility getopt, which may not be available in your Unix/Linux environment. Please use your favorite package manager to install getopt. For Cygwin, install the util-linux package to get getopt. If you use apt-get as your install manager, the package name is opt.
+
+Dependencies
+============
+
+## Hub
+
+You can install hub with HomeBrew
+
+	brew install hub
+
+For more informations about installation please consult the [Official Github](https://github.com/github/hub)
 
 git prflow
 ===========
@@ -59,7 +72,7 @@ The ``-d`` flag will accept all defaults.
 * To push/pull a feature branch to the remote repository, use:
 
   		git prflow feature publish <name>
-        git prflow feature pull <remote> <name>
+    	git prflow feature pull <remote> <name>
 
 * To list/start/finish release branches, use:
   
